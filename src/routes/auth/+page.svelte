@@ -19,13 +19,13 @@
       {#if isSigned }
         <FormLogin />
       {:else}
-        <FormRegister />
+        <FormRegister/>
       {/if}
 		</div> 
     {#if isSigned }
-      <button on:click={toggleForm}>Already Signed?</button>
-    {:else}
       <button on:click={toggleForm}>Register for free</button>
+    {:else}
+      <button on:click={toggleForm}>Already Signed?</button>
     {/if}   
 	</div>
 </div>
