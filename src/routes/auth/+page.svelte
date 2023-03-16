@@ -7,6 +7,7 @@
     isSigned =! isSigned;
   }
 
+  export let form;
 </script>
 
 
@@ -19,7 +20,7 @@
       {#if isSigned }
         <FormLogin />
       {:else}
-        <FormRegister/>
+        <FormRegister {form}/>
       {/if}
 		</div> 
     {#if isSigned }

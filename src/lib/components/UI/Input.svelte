@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { e } from "vitest/dist/index-5aad25c1";
 
   export let labelname = 'label';
   export let type = 'text';
@@ -17,12 +16,12 @@
 	<span>{labelname}</span>
 	<input class="input" {type} {placeholder} {name} {value}/>
   {#if error }
-  <span>{ error }</span>
+  <span class="text-red-500">{ error }</span>
   {/if}
 </label>
 
-{#if errors }
+<!-- {#if errors }
   {#each errors as error}
   {error}
   {/each}
-{/if}
+{/if} -->

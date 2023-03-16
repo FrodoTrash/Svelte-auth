@@ -3,7 +3,7 @@ import { z } from 'zod';
 import {error, fail, redirect } from '@sveltejs/kit'
 
 const registerSchema = z.object({
-  name: z.string().min(3).max(15),
+  username: z.string().min(3).max(15),
   password: z.string().min(3),
   email: z.string().email(),
 }).required()

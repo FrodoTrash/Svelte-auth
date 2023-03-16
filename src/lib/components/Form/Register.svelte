@@ -5,7 +5,7 @@
 
   let isFocused: boolean = true;
 
-  export let form: any;
+  export let form;
 
   
 </script>
