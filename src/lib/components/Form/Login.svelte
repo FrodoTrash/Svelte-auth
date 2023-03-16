@@ -9,7 +9,6 @@
 <form method="POST" use:focusTrap={isFocused}>
   <UIInput labelname="username" name="username" placeholder="@username"/>
   <UIInput labelname="password" name="password" placeholder="******" type="password"/>
-  <UIInput labelname="email" name="email" placeholder="user@email.com" type="password"/>
   <br>
   <button type="submit" class="btn variant-filled-surface">Register</button>
 </form>
