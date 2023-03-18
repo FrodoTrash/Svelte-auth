@@ -8,25 +8,31 @@ const registerSchema = z.object({
   email: z.string().email(),
 }).required()
 
+const loginSchema = z.object({
+  username: z.string().min(3).max(15),
+  password: z.string().min(3),
+}).required()
 
 export const actions = {
-  default: async ({ request }) => {
+  register: async ({ request }) => {
     const { formData, errors } = await validateForm(await request.formData(), registerSchema)
 
+    if (errors) {
+      console.log(formData)
+      return fail(400, {
+        data: formData,
+        errors: errors.fieldErrors,
+      })
+    }
+  },
+  login: async ({ request }) => {
+    const { formData, errors } = await validateForm(await request.formData(), loginSchema)
+    
     if (errors) {
       return fail(400, {
         data: formData,
         errors: errors.fieldErrors,
       })
     }
-
-    // try {
-    //   const result = registerSchema.parse(formData)
-    //   console.log(formData)
-    // } catch (error: any) {
-    //   const { fieldErrors: errors } = error.flatten()
-    //   // console.log(errors)
-    //   return { errors }
-    // }
   }
 }

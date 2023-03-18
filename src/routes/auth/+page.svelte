@@ -18,7 +18,7 @@
     
 		<div class="flex justify-center space-x-2">
       {#if isSigned }
-        <FormLogin />
+        <FormLogin {form}/>
       {:else}
         <FormRegister {form}/>
       {/if}

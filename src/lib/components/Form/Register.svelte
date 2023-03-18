@@ -1,5 +1,6 @@
 <script lang="ts">
   import { focusTrap } from '@skeletonlabs/skeleton';
+  import { enhance } from "$app/forms";
 
   import UIInput from '$lib/components/UI/Input.svelte'
 
@@ -10,7 +11,7 @@
   
 </script>
 
-<form method="POST" use:focusTrap={isFocused}>
+<form action="?/register" method="POST" use:enhance use:focusTrap={isFocused}>
   <UIInput labelname="username" name="username" placeholder="@username" error={form?.errors?.username} value={form?.data?.username ?? ''}/>
   <UIInput labelname="password" name="password" placeholder="******" type="password" error={form?.errors?.password}/>
   <UIInput labelname="email" name="email" placeholder="user@email.com" type="password" error={form?.errors?.email}/>
