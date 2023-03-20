@@ -14,11 +14,10 @@ export const actions = {
 
     // const data = Object.fromEntries(await request.formData());
 
-    const { formData, errors } = await validateForm(await request.formData(), loginSchema)
+    const { errors } = await validateForm(await request.formData(), loginSchema)
 
     if (errors) {
       return fail(400, {
-        data: formData,
         errors: errors.fieldErrors,
       })
     }
