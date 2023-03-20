@@ -24,7 +24,10 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">BINGUS FOREVER</strong>
+				<a class="text-xl font-bold uppercase" href="/">
+					BINGUS FOREVER
+				</a>
+				<!-- <strong class="text-xl uppercase">BINGUS FOREVER</strong> -->
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				{#if !data.user }
