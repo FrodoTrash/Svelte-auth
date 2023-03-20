@@ -15,6 +15,7 @@
 	];
 
 
+	export let data
 </script>
 
 <!-- App Shell -->
@@ -26,12 +27,22 @@
 				<strong class="text-xl uppercase">BINGUS FOREVER</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="/auth"
-				>
-					Login
-				</a>
+				{#if !data.user }
+					<a
+							class="btn btn-sm variant-ghost-surface"
+							href="/auth"
+						>
+							Login
+					</a>
+				{:else}
+					<form action="/logout" method="POST">
+						<button
+							class="btn btn-sm variant-ghost-surface"
+						>
+							Logout
+						</button>
+					</form>
+				{/if}
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

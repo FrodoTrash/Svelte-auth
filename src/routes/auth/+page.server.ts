@@ -16,7 +16,7 @@ const loginSchema = z.object({
   password: z.string(),
 }).required()
 
-
+// TODO: make helper functions for login and register in utils/authHandler.ts
 export const actions = {
   login: async ({ request, locals }) => {
     // validate user input
@@ -35,7 +35,6 @@ export const actions = {
       );
       console.log("[!] User login")
     } catch (error: any) {
-      console.log(error)
       return {
         apiError: error.message
       }
@@ -57,8 +56,8 @@ export const actions = {
         passwordConfirm: data.password
       }));
       console.log("[!] User register")
+
     } catch (error: any) {
-      console.log(error)
       return {
         apiError: error.message
       }

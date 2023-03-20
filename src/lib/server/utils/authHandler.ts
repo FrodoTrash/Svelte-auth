@@ -1,5 +1,3 @@
-import { signIn } from "@auth/sveltekit/client"
-
 // export const registerHandler = async (values: any) => {
 //   try {
 //     const user = await $fetch('/api/auth/register', {

@@ -13,6 +13,7 @@
     value = event.target.value
   }
 </script>
+
 <label for={name} class="label">
 	<span>{labelname}</span>
 	<input class="input" {type} {placeholder} {name} {value} {required}/>

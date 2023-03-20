@@ -4,11 +4,14 @@
   import type { Action } from "@sveltejs/kit";
 
   let isSigned: boolean = true;
+  export let form: Action;
+
+  // FIXME: fix form not deleting currectly
   function toggleForm() {
     isSigned =! isSigned;
+    form = undefined;
   }
 
-  export let form: Action;
 
 </script>
 

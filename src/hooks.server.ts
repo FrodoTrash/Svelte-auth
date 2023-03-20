@@ -11,9 +11,13 @@ export async function handle({ event, resolve }) {
     try {
         // get an up-to-date auth store state by verifying and refreshing the loaded auth model (if any)
         event.locals.pb.authStore.isValid && await event.locals.pb.collection('users').authRefresh();
+        
+        event.locals.user = structuredClone(event.locals.pb.authStore.model);
     } catch (_) {
         // clear the auth store on failed refresh
+        console.log('[!] authStore was cleaned')
         event.locals.pb.authStore.clear();
+        // event.locals.user = undefined;
     }
 
     const response = await resolve(event);
