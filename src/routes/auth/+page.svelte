@@ -3,7 +3,7 @@
   import FormLogin from "$lib/components/Form/Login.svelte";
   import type { Action } from "@sveltejs/kit";
 
-  let isSigned: boolean = false;
+  let isSigned: boolean = true;
   function toggleForm() {
     isSigned =! isSigned;
   }
