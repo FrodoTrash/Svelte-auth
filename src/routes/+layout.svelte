@@ -35,6 +35,7 @@
 							Login
 					</a>
 				{:else}
+				<!-- TODO: IS THERE A BETTER WAY TO LOGOUT? -->
 					<form action="/auth/logout" method="POST">
 						<button
 							class="btn btn-sm variant-ghost-surface"
