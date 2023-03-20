@@ -26,7 +26,7 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="/auth"
+					href="/login"
 				>
 					Login
 				</a>

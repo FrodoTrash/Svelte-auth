@@ -1,27 +1,27 @@
 <script lang="ts">
 
-  export let labelname = 'label';
-  export let type = 'text';
-  export let value = '';
-  export let placeholder = '';
-  export let name = '';
+  export let labelname: string = 'label';
+  export let type: string = 'text';
+  export let value: string = '';
+  export let placeholder: string = '';
+  export let name: string = '';
   
-  export let error = '';
+  export let errors: string = '';
 
   const handleChange = (event: any) => {
     value = event.target.value
   }
 </script>
-<label class="label">
+<label for={name} class="label">
 	<span>{labelname}</span>
 	<input class="input" {type} {placeholder} {name} {value}/>
-  {#if error }
-  <span class="text-red-500">{ error }</span>
-  {/if}
+
 </label>
 
-<!-- {#if errors }
+{#if errors }
   {#each errors as error}
-  {error}
+  <label for={name} class="label">
+    <span class="text-red-500">{ error }</span>
+  </label>
   {/each}
-{/if} -->
+{/if}
