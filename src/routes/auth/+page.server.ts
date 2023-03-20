@@ -19,23 +19,27 @@ const loginSchema = z.object({
 
 export const actions = {
   login: async ({ request, locals }) => {
-
     // validate user input
     const { data, errors } = await validateForm(await request.formData(), loginSchema)
-
     // display error 
     if (errors) {
       return fail(400, {
         errors: errors.fieldErrors,
       })
     }
-
-    const authData = await locals.pb.collection('users').authWithPassword(
-      data.username,
-      data.password,
-    );
-
-    console.log("[!] User login")
+    // send data
+    try {
+      const authData = await locals.pb.collection('users').authWithPassword(
+        data.username,
+        data.password
+      );
+      console.log("[!] User login")
+    } catch (error: any) {
+      console.log(error)
+      return {
+        apiError: error.message
+      }
+    }
   },
   register: async ({ request, locals }) => {
     // validate user input
