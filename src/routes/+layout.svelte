@@ -35,7 +35,7 @@
 							Login
 					</a>
 				{:else}
-					<form action="/logout" method="POST">
+					<form action="/auth/logout" method="POST">
 						<button
 							class="btn btn-sm variant-ghost-surface"
 						>
