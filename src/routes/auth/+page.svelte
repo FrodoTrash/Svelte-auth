@@ -27,6 +27,6 @@
       <button on:click={toggleForm}>Register for free</button>
     {:else}
       <button on:click={toggleForm}>Already Signed?</button>
-    {/if}   
+    {/if}
 	</div>
 </div>

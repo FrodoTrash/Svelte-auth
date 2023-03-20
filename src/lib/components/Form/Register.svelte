@@ -8,7 +8,6 @@
   let isFocused: boolean = true;
 
   export let form: Action;
-
 </script>
 
 <form action="?/register" method="POST" use:enhance use:focusTrap={isFocused}>
@@ -36,5 +35,10 @@
     errors={form?.errors?.email}
   />
   <br>
+  {#if form?.apiError}
+    <span class="text-red-500">{ form?.apiError }</span>
+    <br><br>
+  {/if}
+  
   <button type="submit" class="btn variant-filled-surface">Register</button>
 </form>  

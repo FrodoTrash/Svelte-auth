@@ -28,5 +28,11 @@
     errors={form?.errors?.password}
   />
   <br>
+
+  {#if form?.apiError}
+    <span class="text-red-500">{ form?.apiError }</span>
+    <br><br>
+  {/if}
+
   <button type="submit" class="btn variant-filled-surface">Login</button>
 </form>
