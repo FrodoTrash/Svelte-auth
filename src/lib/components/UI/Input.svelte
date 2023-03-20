@@ -5,7 +5,8 @@
   export let value: string = '';
   export let placeholder: string = '';
   export let name: string = '';
-  
+  export let required: boolean  = false;
+
   export let errors: string = '';
 
   const handleChange = (event: any) => {
@@ -14,7 +15,7 @@
 </script>
 <label for={name} class="label">
 	<span>{labelname}</span>
-	<input class="input" {type} {placeholder} {name} {value}/>
+	<input class="input" {type} {placeholder} {name} {value} {required}/>
 
 </label>
 
