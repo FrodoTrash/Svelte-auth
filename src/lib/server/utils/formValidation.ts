@@ -6,13 +6,13 @@ export const validateForm = async (formData: any, schema: z.Schema) => {
   try {
     const data = schema.parse(body)
     return {
-      formData: data,
+      data,
       errors: null
     }
   } catch (error: any) {
     const errors = error.flatten()
     return {
-      formData: body,
+      data: body,
       errors
     }
   }

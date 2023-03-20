@@ -1,4 +1,5 @@
 <script lang='ts'>
+
 	// The ordering of these imports is critical to your app working properly
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
@@ -12,6 +13,7 @@
     { name: "Affiliattes", link: "/", icon: "fluent:megaphone-loud-16-filled"},
     { name: "Rewards", link: "/", icon: "simple-line-icons:present" },
 	];
+
 
 </script>
 

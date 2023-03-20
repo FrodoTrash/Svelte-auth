@@ -3,6 +3,7 @@ import type { Actions } from '@sveltejs/kit';
 import { validateForm } from '$lib/server/utils/formValidation';
 import { z } from 'zod';
 import { fail } from '@sveltejs/kit'
+import { signIn } from '@auth/sveltekit/client';
 
 const registerSchema = z.object({
   username: z.string().min(3).max(15),
@@ -21,15 +22,24 @@ export const actions = {
 
     // const data = Object.fromEntries(await request.formData());
 
-    const { errors } = await validateForm(await request.formData(), loginSchema)
+    // validate user input
+    const { data, errors } = await validateForm(await request.formData(), loginSchema)
 
+    // display error 
     if (errors) {
-      console.log(errors)
       return fail(400, {
         errors: errors.fieldErrors,
       })
     }
-    console.log("SUCCESS")
+    console.log(data)
+    await signIn('credentials',{
+      username: data.username,
+      password: data.password
+      // callbackUrl: '/', //to what page will it return
+      // redirect: false, // if redirecting to nuxt-auth generated page
+    })
+
+    console.log("/login")
   },
   register: async ({ request }) => {
     const { errors } = await validateForm(await request.formData(), registerSchema)
@@ -40,6 +50,6 @@ export const actions = {
         errors: errors.fieldErrors,
       })
     }
-    console.log("SUCCESS")
+    console.log("/register")
   }
 } satisfies Actions;
