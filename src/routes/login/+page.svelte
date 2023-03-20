@@ -15,8 +15,20 @@
 		<h2 class="font-bold">Welcome to Skeleton.</h2>
 		<div class="flex justify-center space-x-2">
       <form action="?/login" method="POST" use:enhance use:focusTrap={isFocused}>
-        <UIInput labelname="username" name="username" placeholder="@username" required errors={form?.errors?.username}/>
-        <UIInput labelname="password" name="password" placeholder="******" type="password" required errors={form?.errors?.password}/>
+        <UIInput 
+          labelname="username" 
+          name="username" 
+          placeholder="@username" 
+          required 
+          errors={form?.errors?.username}
+        />
+        <UIInput 
+          labelname="password" 
+          name="password" 
+          placeholder="******" 
+          type="password" 
+          required errors={form?.errors?.password}
+        />
         <br>
         <button type="submit" class="btn variant-filled-surface">Login</button>
       </form>
